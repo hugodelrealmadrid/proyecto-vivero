@@ -1,0 +1,93 @@
+@{
+    ViewData["Title"] = "Paquetes de Decoración";
+}
+
+<h2>Paquetes de Decoración</h2>
+<p class="text-muted">Equipo FRIENDS. Creación, catálogo, modificación, eliminación y asignación de paquetes de decoración.</p>
+
+<div class="row g-3">
+    @if (User.IsInRole(RolesSistema.Administrador) || User.IsInRole(RolesSistema.Disenador))
+    {
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-success mb-2">UC6.1</span>
+                    <h5 class="card-title">Crear paquete (definir precio)</h5>
+                    <p class="card-text small text-muted mb-1">Responsable: Maya Juana Mercado Ontiveros</p>
+                    <p class="card-text small text-muted">Roles: Administrador, Diseñador</p>
+                    <a class="btn btn-outline-success btn-sm" asp-area="Paquetes" asp-controller="CrearPaquete" asp-action="Index">Abrir</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (User.IsInRole(RolesSistema.Administrador) || User.IsInRole(RolesSistema.Disenador))
+    {
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-success mb-2">UC6.2</span>
+                    <h5 class="card-title">Crear paquete personalizado</h5>
+                    <p class="card-text small text-muted mb-1">Responsable: José Manuel Yanarico Quispe</p>
+                    <p class="card-text small text-muted">Roles: Administrador, Diseñador</p>
+                    <a class="btn btn-outline-success btn-sm" asp-area="Paquetes" asp-controller="PaquetePersonalizado" asp-action="Index">Abrir</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (User.IsInRole(RolesSistema.Administrador) || User.IsInRole(RolesSistema.Disenador) || User.IsInRole(RolesSistema.Supervisor) || User.IsInRole(RolesSistema.Cliente))
+    {
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-success mb-2">UC6.3</span>
+                    <h5 class="card-title">Consultar catálogo de paquetes</h5>
+                    <p class="card-text small text-muted mb-1">Responsable: Hugo David García Salazar</p>
+                    <p class="card-text small text-muted">Roles: Administrador, Diseñador, Supervisor, Cliente</p>
+                    <a class="btn btn-outline-success btn-sm" asp-area="Paquetes" asp-controller="CatalogoPaquetes" asp-action="Index">Abrir</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (User.IsInRole(RolesSistema.Administrador) || User.IsInRole(RolesSistema.Disenador))
+    {
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-success mb-2">UC6.4</span>
+                    <h5 class="card-title">Modificar paquete</h5>
+                    <p class="card-text small text-muted mb-1">Responsable: Mayerli Quinteros Silva</p>
+                    <p class="card-text small text-muted">Roles: Administrador, Diseñador</p>
+                    <a class="btn btn-outline-success btn-sm" asp-area="Paquetes" asp-controller="ModificarPaquete" asp-action="Index">Abrir</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (User.IsInRole(RolesSistema.Administrador) || User.IsInRole(RolesSistema.Disenador))
+    {
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-success mb-2">UC6.5</span>
+                    <h5 class="card-title">Eliminar paquete</h5>
+                    <p class="card-text small text-muted mb-1">Responsable: Maya Juana Mercado Ontiveros</p>
+                    <p class="card-text small text-muted">Roles: Administrador, Diseñador</p>
+                    <a class="btn btn-outline-success btn-sm" asp-area="Paquetes" asp-controller="EliminarPaquete" asp-action="Index">Abrir</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (User.IsInRole(RolesSistema.Administrador) || User.IsInRole(RolesSistema.Disenador))
+    {
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-success mb-2">UC6.6</span>
+                    <h5 class="card-title">Asignar paquete a proyecto / cliente</h5>
+                    <p class="card-text small text-muted mb-1">Responsable: José Manuel Yanarico Quispe</p>
+                    <p class="card-text small text-muted">Roles: Administrador, Diseñador</p>
+                    <a class="btn btn-outline-success btn-sm" asp-area="Paquetes" asp-controller="AsignarPaquete" asp-action="Index">Abrir</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

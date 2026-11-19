@@ -1,0 +1,19 @@
+## Visual Studio / .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userprefs
+*.rsuser
+.vscode/
+.idea/
+TestResults/
+*.log
+
+## Configuración personal (cada uno tiene su propia contraseña de MySQL)
+appsettings.Local.json
+
+## Sistema operativo
+.DS_Store
+Thumbs.db

@@ -1,0 +1,51 @@
+@{
+    ViewData["Title"] = "Gestión de Personal";
+}
+
+<h2>Gestión de Personal</h2>
+<p class="text-muted">Equipo Code³. Registro, actualización y baja del personal del vivero.</p>
+
+<div class="row g-3">
+    @if (User.IsInRole(RolesSistema.Administrador) || User.IsInRole(RolesSistema.Supervisor))
+    {
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-success mb-2">CU01</span>
+                    <h5 class="card-title">Registrar personal y asignar puesto</h5>
+                    <p class="card-text small text-muted mb-1">Responsable: Brener Garcia Flores</p>
+                    <p class="card-text small text-muted">Roles: Administrador, Supervisor</p>
+                    <a class="btn btn-outline-success btn-sm" asp-area="Personal" asp-controller="RegistrarPersonal" asp-action="Index">Abrir</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (User.IsInRole(RolesSistema.Administrador) || User.IsInRole(RolesSistema.Supervisor))
+    {
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-success mb-2">CU02</span>
+                    <h5 class="card-title">Actualizar datos del personal</h5>
+                    <p class="card-text small text-muted mb-1">Responsable: Emily Betel Condori Pocori</p>
+                    <p class="card-text small text-muted">Roles: Administrador, Supervisor</p>
+                    <a class="btn btn-outline-success btn-sm" asp-area="Personal" asp-controller="ActualizarPersonal" asp-action="Index">Abrir</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (User.IsInRole(RolesSistema.Administrador) || User.IsInRole(RolesSistema.Supervisor))
+    {
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-success mb-2">CU03</span>
+                    <h5 class="card-title">Dar de baja al personal</h5>
+                    <p class="card-text small text-muted mb-1">Responsable: Sidny Abigail Mendoza Vargas</p>
+                    <p class="card-text small text-muted">Roles: Administrador, Supervisor</p>
+                    <a class="btn btn-outline-success btn-sm" asp-area="Personal" asp-controller="BajaPersonal" asp-action="Index">Abrir</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

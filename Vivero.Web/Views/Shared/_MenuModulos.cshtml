@@ -1,0 +1,40 @@
+@* Menú de módulos según el rol. ARCHIVO COMPARTIDO (ya tiene todos los módulos). *@
+@{
+    bool esAdmin = User.IsInRole(RolesSistema.Administrador);
+    bool esSupervisor = User.IsInRole(RolesSistema.Supervisor);
+    bool esJardinero = User.IsInRole(RolesSistema.Jardinero);
+    bool esDisenador = User.IsInRole(RolesSistema.Disenador);
+    bool esConductor = User.IsInRole(RolesSistema.Conductor);
+    bool esCliente = User.IsInRole(RolesSistema.Cliente);
+}
+<ul class="navbar-nav me-auto">
+    @if (esAdmin)
+    {
+        <li class="nav-item"><a class="nav-link" asp-area="Sucursales" asp-controller="Inicio" asp-action="Index">Sucursales</a></li>
+    }
+    @if (esAdmin || esSupervisor)
+    {
+        <li class="nav-item"><a class="nav-link" asp-area="Inventario" asp-controller="Inicio" asp-action="Index">Inventario</a></li>
+    }
+    @if (esAdmin || esSupervisor)
+    {
+        <li class="nav-item"><a class="nav-link" asp-area="Personal" asp-controller="Inicio" asp-action="Index">Personal</a></li>
+    }
+    @if (esAdmin || esSupervisor || esJardinero)
+    {
+        <li class="nav-item"><a class="nav-link" asp-area="Plantas" asp-controller="Inicio" asp-action="Index">Plantas</a></li>
+        <li class="nav-item"><a class="nav-link" asp-area="Tareas" asp-controller="Inicio" asp-action="Index">Tareas</a></li>
+    }
+    @if (esAdmin || esDisenador || esSupervisor || esCliente)
+    {
+        <li class="nav-item"><a class="nav-link" asp-area="Paquetes" asp-controller="Inicio" asp-action="Index">Paquetes</a></li>
+    }
+    @if (esAdmin || esSupervisor || esCliente)
+    {
+        <li class="nav-item"><a class="nav-link" asp-area="Ventas" asp-controller="Inicio" asp-action="Index">Ventas y Pedidos</a></li>
+    }
+    @if (esAdmin || esSupervisor || esConductor || esCliente)
+    {
+        <li class="nav-item"><a class="nav-link" asp-area="Entregas" asp-controller="Inicio" asp-action="Index">Entregas</a></li>
+    }
+</ul>

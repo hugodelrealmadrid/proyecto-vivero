@@ -1,0 +1,79 @@
+@{
+    ViewData["Title"] = "Asignación de Tareas";
+}
+
+<h2>Asignación de Tareas</h2>
+<p class="text-muted">Equipo FRIENDS. Registro, consulta, modificación y cancelación de tareas asignadas a los trabajadores.</p>
+
+<div class="row g-3">
+    @if (User.IsInRole(RolesSistema.Administrador) || User.IsInRole(RolesSistema.Supervisor))
+    {
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-success mb-2">UC4.1</span>
+                    <h5 class="card-title">Registrar tarea</h5>
+                    <p class="card-text small text-muted mb-1">Responsable: Mayerli Quinteros Silva</p>
+                    <p class="card-text small text-muted">Roles: Administrador, Supervisor</p>
+                    <a class="btn btn-outline-success btn-sm" asp-area="Tareas" asp-controller="RegistrarTarea" asp-action="Index">Abrir</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (User.IsInRole(RolesSistema.Administrador) || User.IsInRole(RolesSistema.Supervisor) || User.IsInRole(RolesSistema.Jardinero))
+    {
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-success mb-2">UC4.2</span>
+                    <h5 class="card-title">Consultar estado de tarea</h5>
+                    <p class="card-text small text-muted mb-1">Responsable: Maya Juana Mercado Ontiveros</p>
+                    <p class="card-text small text-muted">Roles: Administrador, Supervisor, Jardinero</p>
+                    <a class="btn btn-outline-success btn-sm" asp-area="Tareas" asp-controller="ConsultarTarea" asp-action="Index">Abrir</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (User.IsInRole(RolesSistema.Administrador) || User.IsInRole(RolesSistema.Supervisor))
+    {
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-success mb-2">UC4.3</span>
+                    <h5 class="card-title">Modificar / reasignar tarea</h5>
+                    <p class="card-text small text-muted mb-1">Responsable: José Manuel Yanarico Quispe</p>
+                    <p class="card-text small text-muted">Roles: Administrador, Supervisor</p>
+                    <a class="btn btn-outline-success btn-sm" asp-area="Tareas" asp-controller="ModificarTarea" asp-action="Index">Abrir</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (User.IsInRole(RolesSistema.Administrador) || User.IsInRole(RolesSistema.Supervisor))
+    {
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-success mb-2">UC4.4</span>
+                    <h5 class="card-title">Eliminar / cancelar tarea</h5>
+                    <p class="card-text small text-muted mb-1">Responsable: Hugo David García Salazar</p>
+                    <p class="card-text small text-muted">Roles: Administrador, Supervisor</p>
+                    <a class="btn btn-outline-success btn-sm" asp-area="Tareas" asp-controller="CancelarTarea" asp-action="Index">Abrir</a>
+                </div>
+            </div>
+        </div>
+    }
+    @if (User.IsInRole(RolesSistema.Administrador) || User.IsInRole(RolesSistema.Supervisor))
+    {
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <span class="badge bg-success mb-2">UC4.5</span>
+                    <h5 class="card-title">Visualizar trabajador</h5>
+                    <p class="card-text small text-muted mb-1">Responsable: Mayerli Quinteros Silva</p>
+                    <p class="card-text small text-muted">Roles: Administrador, Supervisor</p>
+                    <a class="btn btn-outline-success btn-sm" asp-area="Tareas" asp-controller="VisualizarTrabajador" asp-action="Index">Abrir</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
