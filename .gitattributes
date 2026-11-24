@@ -1,8 +1,0 @@
-# Normaliza saltos de línea para que Windows/Mac no generen conflictos falsos
-* text=auto
-*.cs     text diff=csharp
-*.cshtml text
-*.sql    text
-*.sln    text eol=crlf
-*.png binary
-*.jpg binary
